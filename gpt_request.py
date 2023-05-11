@@ -20,7 +20,8 @@ def generate_response(prompt):
 
 if __name__ == "__main__":
     while True:
-        print("Введіть запит:")
-        request = input(">> ")
+        request = input("You: ")
+        if request == "stop":
+            break
         text = generate_response(request)
-        print(text)
+        print("ChatGPT: ", text)
