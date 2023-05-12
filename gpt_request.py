@@ -22,10 +22,25 @@ def generate_response(prompt):
     return response.choices[0].text.strip()
 
 
+def generate_turbo_response(prompt):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": f"{prompt}"}],
+        max_tokens=2048,
+        temperature=0.5,
+        top_p=1,
+        frequency_penalty=0.0,
+        presence_penalty=0.0,
+        stop=None
+    )
+    # print(response)
+    return response.choices[0]["message"]["content"]
+
+
 if __name__ == "__main__":
     while True:
         request = input("You: ")
         if request == "stop":
             break
-        text = generate_response(request)
+        text = generate_turbo_response(request)
         print("ChatGPT: ", text)
