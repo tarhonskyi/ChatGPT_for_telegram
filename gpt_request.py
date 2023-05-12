@@ -13,8 +13,12 @@ def generate_response(prompt):
         prompt=prompt,
         max_tokens=2048,
         temperature=0.5,
+        top_p=1,
+        frequency_penalty=0.0,
+        presence_penalty=0.0,
+        stop=None
     )
-
+    # print(response)
     return response.choices[0].text.strip()
 
 
