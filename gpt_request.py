@@ -16,7 +16,7 @@ def generate_response(prompt):
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.0,
-        stop=None
+        stop=None,
     )
     # print(response)
     return response.choices[0].text.strip()
@@ -31,7 +31,7 @@ def generate_turbo_response(prompt):
         top_p=1,
         frequency_penalty=0.0,
         presence_penalty=0.0,
-        stop=None
+        stop=None,
     )
     # print(response)
     return response.choices[0].message.content.strip()
