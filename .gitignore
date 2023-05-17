@@ -328,3 +328,6 @@ $RECYCLE.BIN/
 
 # enviroment
 .env
+
+# tox
+.tox/
